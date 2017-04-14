@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Music List</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+
+    <link rel="stylesheet" th:href="@{'styles.css'}" href="../static/styles.css"/>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/}" href="index.html">Home</a></li>
+        <li><a th:href="@{/musicForm}" href="musicForm.html">Add Music</a></li>
+        <li><a th:href="@{/addCSV}" href="addCSV.html">Add CSV</a></li>
+    </ul>
+</nav>
+
+<h1>Composition List</h1>
+
+<form th:action="@{/}" action="index.html" method="get">
+    <label>
+        <span>Search:</span>
+        <input type="text" name="search" value="" />
+    </label>
+    <button>Search</button>
+</form>
+
+<p>Showing <span>4</span> compositions.</p>
+
+<table>
+    <tr>
+        <th>
+            Catagory
+        </th>
+        <th>
+            Library Number
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+          Composer
+        </th>
+        <th>
+           Arranger
+        </th>
+        <th>
+            Ensemble
+        </th>
+    </tr>
+    <tr th:each="composition:${compositions}">
+        <td th:text="${composition.getCatagory()}">SB</td>
+        <td th:text="${composition.getLibraryNumber()}">56</td>
+        <td th:text="${composition.getTitle()}"><a href="musicForm.html">LA CUCARACHA</a></td>
+        <td th:text="${composition.getComposer()}">Traditional</td>
+        <td th:text="${composition.getArranger()}">Victor, King</td>
+        <td th:text="${composition.getEnsemble()}">Jazz Ensemble</td>
+    </tr>
+    <tr th:remove="all">
+        <td>SB</td>
+        <td>38</td>
+        <td><a href="musicForm.html">In A Mellow Tone</a></td>
+        <td>Ellington,Duke</td>
+        <td>Wolpe, Dave</td>
+        <td>Jazz Ensemble</td>
+    </tr>
+    <tr th:remove="all">
+        <td>M</td>
+        <td>56</td>
+        <td><a href="musicForm.html">MUTTERING FRITZ</a></td>
+        <td>Loosey,FH</td>
+        <td></td>
+        <td>March</td>
+    </tr>
+</table>
+
+</body>
+</html>

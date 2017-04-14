@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <!-- todo: make this shown add or edit as appropriate -->
+    <title>Add/Edit Music</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+
+    <link rel="stylesheet" th:href="@{'styles.css'}" href="../static/styles.css"/>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/}" href="index.html">Home</a></li>
+        <li><a th:href="@{/musicForm}" href="musicForm.html">Add Music</a></li>
+        <li><a th:href="@{/addCSV}" href="addCSV.html">Add CSV</a></li>
+    </ul>
+</nav>
+
+<!-- todo: make this shown add or edit as appropriate -->
+<h1>Add/Edit Music</h1>
+
+<p>Use the form below to <span>add/edit</span> a composition.</p>
+
+<form action="index.html" method="post">
+    <label>
+        <span>Catagory:</span>
+        <input type="text" name="catagory" value=""/>
+    </label>
+
+    <label>
+        <span>Library Number:</span>
+        <input type="text" name="libnum" value=""/>
+    </label>
+
+    <label>
+        <span>Title:</span>
+        <input type="text" name="title" value=""/>
+    </label>
+
+    <label>
+        <span>Composer:</span>
+        <input type="text" name="composer" value=""/>
+    </label>
+
+    <label>
+        <span>Arranger:</span>
+        <input type="text" name="arranger" value=""/>
+    </label>
+
+    <label>
+        <span>Copyright:</span>
+        <input type="text" name="copyright" value=""/>
+    </label>
+
+    <label>
+        <span>Ensemble:</span>
+        <input type="text" name="ensemble" value=""/>
+    </label>
+
+    <label>
+        <span>Notes:</span>
+        <input type="text" name="notes" value=""/>
+    </label>
+
+    <input type="hidden" name="compositionId" value=""/>
+
+    <button>Save Composition</button>
+</form>
+
+</body>
+</html>
