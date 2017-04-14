@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <!-- todo: make this shown add or edit as appropriate -->
-    <title>Add/Edit Music</title>
+    <title>Upload CSV</title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
 
@@ -20,11 +20,10 @@
 </nav>
 
 
-<h1>Add/Edit Music</h1>
+<h1>Upload Library CSV</h1>
 
-<p>Use the form below to <span>add/edit</span> a person.</p>
+<p></p>
 
-<br/><hr/>
 <form method="POST" th:action="@{/submitCSV}" action="index.html" enctype="multipart/form-data">
     File to upload: <input type="file" name="file"/>
 

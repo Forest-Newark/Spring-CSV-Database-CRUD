@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Music List</title>
+    <title>Music Library</title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
 
@@ -18,7 +18,7 @@
     </ul>
 </nav>
 
-<h1>Composition List</h1>
+<h1>Music Library</h1>
 
 <form th:action="@{/}" action="index.html" method="get">
     <label>
@@ -28,7 +28,7 @@
     <button>Search</button>
 </form>
 
-<p>Showing <span>4</span> compositions.</p>
+<p>Showing <span th:text="${size}">3</span> composition(s).</p>
 
 <table>
     <tr>

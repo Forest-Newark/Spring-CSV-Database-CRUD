@@ -36,6 +36,7 @@ public class CompositionController {
     @RequestMapping("/")
     public String showCompositions(Model model, String search){
         model.addAttribute("compositions",repo.listCompositions(search));
+        model.addAttribute("size",repo.listCompositions(search).size());
 
         return "index";
     }
